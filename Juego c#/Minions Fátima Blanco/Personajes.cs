@@ -48,7 +48,7 @@ public class Personaje
   public void ComerFruta(string fruta)
 
   {
-      fruta.ToLower().Trim();
+     fruta = fruta.ToLower().Trim();
       if(fruta == "banana")
       {
           _stamina += 10;
