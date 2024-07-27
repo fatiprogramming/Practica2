@@ -59,6 +59,8 @@ namespace Minions_Fátima_Blanco
             rios.Atacar(0, amenazante, 1);
             rios.Reparar();
             rios.Limpiar(sectorcito, 3);
+            rios.ComerFruta("Banana");
+            rios.ComerFruta("manzana");
 
             Console.WriteLine("------------");
 
