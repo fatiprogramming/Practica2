@@ -45,7 +45,30 @@ public class Personaje
         }
         _nombre = nombre;
     }
+  public void ComerFruta(string fruta)
 
+  {
+      fruta.ToLower().Trim();
+      if(fruta == "banana")
+      {
+          _stamina += 10;
+          Console.WriteLine($"Has recuperado 10 de stamina. Stamina actual: {_stamina}");
+      }
+      else if (fruta == "manzana")
+      {
+          _stamina += 5;
+          Console.WriteLine($"Has recuperado 5 de stamina. Stamina actual: {_stamina}");
+      }
+      else if (fruta == "uvas")
+      {
+          _stamina += 1;
+          Console.WriteLine($"Has recuperado 1 de stamina. Stamina actual: {_stamina}");
+      }
+      else
+      {
+          Console.WriteLine("Fruta no válida");
+      }
+  }
     public int Stamina
     {
         get { return _stamina; }
