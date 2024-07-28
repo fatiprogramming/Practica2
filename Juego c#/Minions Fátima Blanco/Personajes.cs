@@ -1,4 +1,3 @@
-﻿
 namespace Personajes;
 using System;
 public class Personaje
@@ -9,6 +8,7 @@ public class Personaje
     protected string _nombre;
     protected int _fuerza;
     protected int _experiencia;
+    protected string _tipo;
 
     public Personaje(string tipo, string nombre, int stamina)
     {
@@ -20,6 +20,7 @@ public class Personaje
     protected virtual void ConfigurarPersonaje(string tipo, string nombre, ref int stamina)
     {
         tipo = tipo.ToLower().Trim();
+        _tipo = tipo;
 
         if (tipo == "biclope" || tipo == "bíclope")
         {
@@ -45,45 +46,46 @@ public class Personaje
         }
         _nombre = nombre;
     }
-  public void ComerFruta(string fruta)
 
-  {
-      fruta = fruta.ToLower().Trim();
-      if(fruta == "banana")
-      {
-          _stamina += 10;
-          if(_tipo == "biclope" || _tipo == "bíclope" && _stamina > 10)
-          {
-              _stamina = 10;
-              Console.WriteLine("Al ser un bíclope no puede superar los 10 puntos de stamina");
-          }
-          Console.WriteLine($"Has recuperado 10 de stamina. Stamina actual: {_stamina}");
-      }
-      else if (fruta == "manzana")
-      {
-          _stamina += 5;
-          if (_tipo == "biclope" || _tipo == "bíclope" && _stamina > 10)
-          {
-              _stamina = 10;
-              Console.WriteLine("Al ser un bíclope no puede superar los 10 puntos de stamina");
-          }
-          Console.WriteLine($"Has recuperado 5 de stamina. Stamina actual: {_stamina}");
-      }
-      else if (fruta == "uvas")
-      {
-          _stamina += 1;
-          if (_tipo == "biclope" || _tipo == "bíclope" && _stamina > 10)
-          {
-              _stamina = 10;
-              Console.WriteLine("Al ser un bíclope no puede superar los 10 puntos de stamina");
-          }
-          Console.WriteLine($"Has recuperado 1 de stamina. Stamina actual: {_stamina}");
-      }
-      else
-      {
-          Console.WriteLine("Fruta no válida");
-      }
-  }
+    public void ComerFruta(string fruta)
+
+    {
+        fruta = fruta.ToLower().Trim();
+        if(fruta == "banana")
+        {
+            _stamina += 10;
+            if(_tipo == "biclope" || _tipo == "bíclope" && _stamina > 10)
+            {
+                _stamina = 10;
+                Console.WriteLine("Al ser un bíclope no puede superar los 10 puntos de stamina");
+            }
+            Console.WriteLine($"Has recuperado 10 de stamina. Stamina actual: {_stamina}");
+        }
+        else if (fruta == "manzana")
+        {
+            _stamina += 5;
+            if (_tipo == "biclope" || _tipo == "bíclope" && _stamina > 10)
+            {
+                _stamina = 10;
+                Console.WriteLine("Al ser un bíclope no puede superar los 10 puntos de stamina");
+            }
+            Console.WriteLine($"Has recuperado 5 de stamina. Stamina actual: {_stamina}");
+        }
+        else if (fruta == "uvas")
+        {
+            _stamina += 1;
+            if (_tipo == "biclope" || _tipo == "bíclope" && _stamina > 10)
+            {
+                _stamina = 10;
+                Console.WriteLine("Al ser un bíclope no puede superar los 10 puntos de stamina");
+            }
+            Console.WriteLine($"Has recuperado 1 de stamina. Stamina actual: {_stamina}");
+        }
+        else
+        {
+            Console.WriteLine("Fruta no válida");
+        }
+    }
     public int Stamina
     {
         get { return _stamina; }
